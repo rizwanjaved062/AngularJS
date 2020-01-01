@@ -15,9 +15,9 @@
       <br clear='all'/>
     <table style='width:50%;margin: 0 auto;'>
       <tr>
-        <td>Name</td>
-        <td>Course</td>
-        <td><span ng-click="add()">Add New</span></td>
+        <td style="background: antiquewhite;"><b>Name</b></td>
+        <td style="background: antiquewhite;"><b>Course</b></td>
+        <td style="background: antiquewhite;"><span ng-click="add()"  style="background: #c2c2f5;padding: 8px;color: mediumblue;"><b>Add New</b></span></td>
       </tr>
       <tr ng-repeat="profile in Profiles">
         <td>
@@ -29,9 +29,9 @@
           <span ng-hide="profile.editable">{{ profile.course }}</span>
         </td>
         <td>
-          <span ng-click="edit($index)" ng-hide="profile.editable">Edit</span>
-          <span ng-click="save($index)" ng-show="profile.editable">Save</span>
-          <span ng-click="delete($index)"> | Delete</span>
+          <span ng-click="edit($index)" ng-hide="profile.editable" style="color:blue;">Edit</span>
+          <span ng-click="save($index)" ng-show="profile.editable" style="color:blue;">Save</span>
+          <span ng-click="delete($index)"  style="color:blue;"> | Delete</span>
         </td>
       </tr>
     </table>
