@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.angularjs.org/1.2.16/angular.js"></script>
+    <script src="script.js"></script>
+    
+  </head>
+
+  <body ng-app="App">
+  <div ng-controller="CrudCtrl">
+      
+      <h1 style='width:50%;margin: 0 auto;'>Student CRUD</h1>
+      <br clear='all'/>
+    <table style='width:50%;margin: 0 auto;'>
+      <tr>
+        <td>Name</td>
+        <td>Course</td>
+        <td><span ng-click="add()">Add New</span></td>
+      </tr>
+      <tr ng-repeat="profile in Profiles">
+        <td>
+          <input type="text" ng-model="profile.name" ng-show="profile.editable">
+          <span ng-hide="profile.editable">{{ profile.name }}</span>
+        </td>
+        <td>
+          <input type="text" ng-model="profile.course" ng-show="profile.editable">
+          <span ng-hide="profile.editable">{{ profile.course }}</span>
+        </td>
+        <td>
+          <span ng-click="edit($index)" ng-hide="profile.editable">Edit</span>
+          <span ng-click="save($index)" ng-show="profile.editable">Save</span>
+          <span ng-click="delete($index)"> | Delete</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </body>
+
+</html>
